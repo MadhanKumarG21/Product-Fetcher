@@ -1,0 +1,93 @@
+.productView {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.04);
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.closebutton {
+    background-color: #f1f5f9;
+    color: #475569;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    align-self: flex-start;
+}
+
+.closebutton:hover {
+    background-color: #e2e8f0;
+    color: #0f172a;
+}
+
+.productleft {
+    flex: 1;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.productleft img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.productleft h1 {
+    font-size: 28px;
+    color: #0f172a;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+.productright {
+    flex: 1;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+.productright p {
+    font-size: 16px;
+    color: #334155;
+    line-height: 1.6;
+}
+
+.productright p span:first-child {
+    font-weight: 600;
+    color: #0f172a;
+    width: 150px;
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+.productright .star {
+    color: #fbbf24;
+    font-weight: bold;
+}
+
+.productright .star span:last-child {
+    color: #64748b;
+    font-weight: normal;
+    display: inline;
+}
+
+.productright .addtocart {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 18px;
+}

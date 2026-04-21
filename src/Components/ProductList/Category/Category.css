@@ -1,0 +1,44 @@
+.CategoryContainer {
+    width: 260px;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.03);
+    position: sticky;
+    top: 100px;
+}
+
+.CategoryContainer h3 {
+    color: #1e293b;
+    font-size: 16px;
+    margin-bottom: 8px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.CategoryContainer h3:first-child {
+    margin-top: 0px;
+}
+
+.CategoryContainer select {
+    width: 100%;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #334155;
+    background-color: #f8fafc;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.CategoryContainer select:focus {
+    border-color: #2563eb;
+    box-shadow: 0px 0px 0px 3px rgba(37, 99, 235, 0.15);
+}
+
+.CategoryContainer select option {
+    font-size: 15px;
+}

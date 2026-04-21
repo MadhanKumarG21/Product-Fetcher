@@ -1,0 +1,93 @@
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    padding: 0px 5%;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+.SearchBar {
+    display: flex;
+    flex: 1;
+    max-width: 600px;
+    margin: 0px 20px;
+    align-items: center;
+    background-color: #f1f5f9;
+    border-radius: 8px;
+    padding: 4px;
+    border: 1px solid #e2e8f0;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.SearchBar:focus-within {
+    box-shadow: 0px 0px 0px 3px rgba(37, 99, 235, 0.2);
+    border-color: #2563eb;
+}
+
+.SearchBar input {
+    flex: 1;
+    height: 40px;
+    padding: 0px 15px;
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    font-weight: 500;
+    color: #334155;
+    outline: none;
+}
+
+.SearchBar input::placeholder {
+    color: #94a3b8;
+}
+
+.SearchBar button {
+    width: 45px;
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SearchBar button:hover {
+    background-color: #1d4ed8;
+}
+
+.cart {
+    border-radius: 8px;
+    border: 2px solid #2563eb;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: transparent;
+    color: #2563eb;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.cart:hover {
+    background-color: #2563eb;
+    color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(37, 99, 235, 0.3);
+}
