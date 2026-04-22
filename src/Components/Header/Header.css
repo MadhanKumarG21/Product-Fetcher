@@ -18,7 +18,7 @@
 }
 
 .logo img {
-    height: 60px;
+    height: 160px;
     width: auto;
     object-fit: contain;
 }
@@ -36,10 +36,10 @@
     transition: box-shadow 0.2s ease-in-out;
 }
 
-.SearchBar:focus-within {
+/* .SearchBar:focus-within {
     box-shadow: 0px 0px 0px 3px rgba(37, 99, 235, 0.2);
     border-color: #2563eb;
-}
+} */
 
 .SearchBar input {
     flex: 1;

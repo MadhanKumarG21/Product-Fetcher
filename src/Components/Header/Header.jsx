@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
-
+import productImg from "../../assets/e-commmerce_image1.png";
 const Header = ({
   cart,
   searchTerm,
@@ -15,7 +15,7 @@ const Header = ({
   return (
     <div className="headerContainer">
       <div className="logo" onClick={onclose}>
-        <img src="./Image/e-commmerce_image1.png" alt="image" />
+       <img src={productImg} alt="product" />
       </div>
       <div className="SearchBar">
         <input

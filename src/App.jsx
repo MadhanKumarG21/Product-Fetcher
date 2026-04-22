@@ -24,6 +24,7 @@ const App = () => {
   const [category, setCategory] = useState("all");
   const [rating, setRating] = useState(0);
   const [priceSort, setPriceSort] = useState("");
+  const [Brand, setBrand] = useState("");
 
   useEffect(() => {
     const FetchProducts = async () => {
@@ -91,7 +92,8 @@ let filteredProducts = products.filter((product) => {
   const searchMatch = product.title.toLowerCase().includes(searchTerm.toLowerCase());
   const categoryMatch = category === "all" || product.category === category;
   const ratingMatch =product.rating >= rating;
-  return searchMatch && categoryMatch && ratingMatch;
+  const brandMatch = Brand === "" || product.brand === Brand;
+  return searchMatch && categoryMatch && ratingMatch && brandMatch;
 });
 if (priceSort === "low-high") {
   filteredProducts = [...filteredProducts].sort(
@@ -126,6 +128,7 @@ if (priceSort === "high-low") {
                   setCategory={setCategory}
                   setRating={setRating}
                   setPriceSort={setPriceSort}
+                  setBrand={setBrand}
                 />
               </aside>
               <Productlist

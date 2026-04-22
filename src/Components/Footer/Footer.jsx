@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import productImg from "../../assets/e-commmerce_image1.png";
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
         {/* Left Section */}
         <div className="footerSection">
           <img 
-            src="/Image/e-commmerce_image1.png" 
+            src={productImg} 
             alt="logo" 
             className="footerLogo"
           />

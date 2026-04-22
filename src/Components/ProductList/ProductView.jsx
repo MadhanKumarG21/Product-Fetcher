@@ -27,7 +27,7 @@ const ProductView = ({selectedProduct,addToCart}) => {
         </div>
         <div className='productright'>
           
-           <p><span>Price:</span>{selectedProduct.price}</p>
+           <p><span>Price:</span>${selectedProduct.price}</p>
              <p className="star"><span>rating:</span>
               {renderStars(selectedProduct.rating)} <span>({selectedProduct.rating})</span>
             </p>
