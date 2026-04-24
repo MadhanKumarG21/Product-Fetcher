@@ -34,7 +34,7 @@
     color: #fff;
 }
 
-/* 🔥 GRID LIKE PRODUCT LIST */
+/* GRID LIKE PRODUCT LIST */
 .cartGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -167,10 +167,3 @@
     cursor: pointer;
 }
 
-/* 📱 MOBILE */
-@media (max-width: 768px) {
-    .cartend {
-        flex-direction: column;
-        gap: 15px;
-    }
-}
