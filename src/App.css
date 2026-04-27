@@ -4,6 +4,19 @@
     padding: 40px;
     max-width: 1400px;
     margin: 0 auto;
+    align-items: flex-start;
+}
+
+/* Ensure flex items share space nicely */
+.mainContainer > aside {
+    flex-shrink: 0;
+    position: sticky;
+    top: 120px; /* Adjust based on header height */
+}
+
+.mainContainer > div.ProductContainer,
+.mainContainer > div.no-products {
+    flex: 1;
 }
 
 button {
@@ -27,4 +40,11 @@ button {
 .addtocart:hover {
     background-color: #1d4ed8;
     box-shadow: 0px 6px 12px rgba(37, 99, 235, 0.3);
+}
+
+@media (max-width: 900px) {
+    .mainContainer {
+        flex-direction: column;
+        padding: 20px;
+    }
 }

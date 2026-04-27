@@ -18,6 +18,15 @@ const Productlist = ({ products, viewProductData, addToCart }) => {
     return stars.join("");
   };
 
+  if (products.length === 0) {
+    return (
+      <div className="no-products">
+        <h3>No products found</h3>
+        <p>Try adjusting your search or filters to find what you're looking for!</p>
+      </div>
+    );
+  }
+
   return (
     <div className="ProductContainer">
       {products.map((product) => (

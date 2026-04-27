@@ -42,3 +42,22 @@
 .CategoryContainer select option {
     font-size: 15px;
 }
+
+@media (max-width: 900px) {
+    .CategoryContainer {
+        width: 100%;
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    .CategoryContainer h3 {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .CategoryContainer {
+        grid-template-columns: 1fr;
+    }
+}

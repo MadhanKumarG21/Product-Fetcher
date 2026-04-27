@@ -90,10 +90,25 @@
 
 .placeOrder:hover {
     background-color: #059669;
-    transform: translateY(-2px);
     box-shadow: 0px 6px 14px rgba(16, 185, 129, 0.3);
 }
 
 .placeOrder:active {
     transform: translateY(0px);
+}
+
+@media (max-width: 768px) {
+    .checkoutWrapper {
+        padding: 20px;
+        margin: 20px auto;
+    }
+    
+    .checkoutTitle {
+        font-size: 24px;
+    }
+    
+    .summaryItem {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

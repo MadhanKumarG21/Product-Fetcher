@@ -167,3 +167,26 @@
     cursor: pointer;
 }
 
+@media (max-width: 768px) {
+    .cartHeader {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .cartGrid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cartend {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .checkoutBtn {
+        width: 100%;
+    }
+}
+

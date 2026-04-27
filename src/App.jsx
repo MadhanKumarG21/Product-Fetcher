@@ -20,19 +20,18 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [cart, setCart] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const navigate = useNavigate();
   const [category, setCategory] = useState("all");
   const [rating, setRating] = useState(0);
   const [priceSort, setPriceSort] = useState("");
   const [Brand, setBrand] = useState("");
-
+ const navigate = useNavigate();
   useEffect(() => {
     const FetchProducts = async () => {
       try {
         const response = await fetch("https://dummyjson.com/products");
         const data = await response.json();
         console.log(data.products);
-        setProducts(data.products);
+        setProducts(data.products || []);
       } catch (error) {
         console.log("Error:", error);
       } finally {
@@ -113,6 +112,7 @@ if (priceSort === "high-low") {
     <>
       <Header
         cart={cart}
+        products={products}
         setSearchTerm={setSearchTerm}
         searchTerm={searchTerm}
       />

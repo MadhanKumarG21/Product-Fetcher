@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import "./ProductView.css"
 
 const ProductView = ({selectedProduct,addToCart}) => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const onclose=()=>{navigate(-1)}
     const renderStars = (rating) => {
     const stars = [];
