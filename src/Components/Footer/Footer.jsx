@@ -6,17 +6,12 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footerContainer">
-
         {/* Left Section */}
         <div className="footerSection">
-          <img 
-            src={productImg} 
-            alt="logo" 
-            className="footerLogo"
-          />
+          <img src={productImg} alt="logo" className="footerLogo" />
           <p>
-            Your one-stop shop for all products. 
-            Fast delivery, best price, and trusted quality.
+            Your one-stop shop for all products. Fast delivery, best price, and
+            trusted quality.
           </p>
         </div>
 
@@ -49,10 +44,7 @@ const Footer = () => {
           <p>Phone: +91 98765 43210</p>
           <p>Location: Puducherry, India</p>
         </div>
-
       </div>
-
- 
 
       {/* Bottom */}
       <div className="footerBottom">

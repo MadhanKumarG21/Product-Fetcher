@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CheckOut.css";
 
-const Checkout = ({ cart, totalPrice, setShowCheckout }) => {
+const Checkout = ({ cart, totalPrice, setShowCheckout,setCart }) => {
   const navigate = useNavigate();
   const fullNameRef = useRef();
   const addressRef = useRef();
@@ -66,6 +66,7 @@ const Checkout = ({ cart, totalPrice, setShowCheckout }) => {
     console.log("Order Data:", orderData);
     alert("🎉 Order placed successfully!");
     navigate("/");
+    setCart([]);
   };
 
   return (

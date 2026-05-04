@@ -10,6 +10,7 @@ const Cart = ({
   removeItem,
   totalPrice,
   viewProduct,
+  setCart,
 }) => {
   const [showCheckout, setShowCheckout] = useState(false);
   const navigate = useNavigate();
@@ -37,6 +38,7 @@ const Cart = ({
           cart={cart}
           totalPrice={totalPrice}
           setShowCheckout={setShowCheckout}
+          setCart={setCart}
         />
       ) : (
         <div className="cartWrapper">

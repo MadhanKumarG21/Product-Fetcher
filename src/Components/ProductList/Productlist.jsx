@@ -2,7 +2,6 @@ import React from "react";
 import "./ProductList.css";
 
 const Productlist = ({ products, viewProductData, addToCart }) => {
-
   //star
   const renderStars = (rating) => {
     const stars = [];
@@ -22,7 +21,9 @@ const Productlist = ({ products, viewProductData, addToCart }) => {
     return (
       <div className="no-products">
         <h3>No products found</h3>
-        <p>Try adjusting your search or filters to find what you're looking for!</p>
+        <p>
+          Try adjusting your search or filters to find what you're looking for!
+        </p>
       </div>
     );
   }
@@ -38,7 +39,7 @@ const Productlist = ({ products, viewProductData, addToCart }) => {
           <div className="imageproduct">
             <img src={product.thumbnail} alt={product.title} />
           </div>
-          
+
           <h2>{product.title}</h2>
           <div className="categoryRating">
             <p>{product.category}</p>

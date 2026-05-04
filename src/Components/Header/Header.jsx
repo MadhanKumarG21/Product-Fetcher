@@ -16,7 +16,7 @@ const Header = ({
     navigate("/");
   };
 
-  // 🔍 Handle search input
+  //  Handle search input
   const handleSearch = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
@@ -30,7 +30,7 @@ const Header = ({
       .filter((p) =>
         p.title.toLowerCase().includes(value.toLowerCase())
       )
-      .slice(0, 5); // limit results
+      .slice(0, 5); // limit results  
 
     setSuggestions(filtered);
   };

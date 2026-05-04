@@ -11,7 +11,12 @@ import Footer from "./Components/Footer/Footer";
 const ProductDetailRoute = ({ products, addToCart }) => {
   const { id } = useParams();
   const product = products.find((p) => p.id === Number(id));
-  if (!product) return <div style={{ textAlign: "center", padding: "50px", fontSize: "20px" }}>Product Not Found</div>;
+  if (!product)
+    return (
+      <div style={{ textAlign: "center", padding: "50px", fontSize: "20px" }}>
+        Product Not Found
+      </div>
+    );
   return <ProductView selectedProduct={product} addToCart={addToCart} />;
 };
 
@@ -24,7 +29,7 @@ const App = () => {
   const [rating, setRating] = useState(0);
   const [priceSort, setPriceSort] = useState("");
   const [Brand, setBrand] = useState("");
- const navigate = useNavigate();
+  const navigate = useNavigate();
   useEffect(() => {
     const FetchProducts = async () => {
       try {
@@ -60,14 +65,14 @@ const App = () => {
       setCart([...cart, { ...product, quantity: 1 }]);
     }
   };
-//Increase quantity of product in cart
+  //Increase quantity of product in cart
   const increaseQuantity = (id) => {
     const updatedCart = cart.map((item) =>
       item.id === id ? { ...item, quantity: item.quantity + 1 } : item,
     );
     setCart(updatedCart);
   };
-// Decrease quantity of product in cart
+  // Decrease quantity of product in cart
   const decreaseQuantity = (id) => {
     const updatedCart = cart
       .map((item) =>
@@ -76,34 +81,32 @@ const App = () => {
       .filter((item) => item.quantity > 0);
     setCart(updatedCart);
   };
-//Remove product from cart
+  //Remove product from cart
   const removeItem = (id) => {
     const updatedCart = cart.filter((item) => item.id !== id);
     setCart(updatedCart);
   };
-//Total price of product
+  //Total price of product
   const totalPrice = cart.reduce(
     (total, item) => total + item.price * item.quantity,
     0,
   );
-  
-let filteredProducts = products.filter((product) => {
-  const searchMatch = product.title.toLowerCase().includes(searchTerm.toLowerCase());
-  const categoryMatch = category === "all" || product.category === category;
-  const ratingMatch =product.rating >= rating;
-  const brandMatch = Brand === "" || product.brand === Brand;
-  return searchMatch && categoryMatch && ratingMatch && brandMatch;
-});
-if (priceSort === "low-high") {
-  filteredProducts = [...filteredProducts].sort(
-    (a, b) => a.price - b.price
-  );
-}
-if (priceSort === "high-low") {
-  filteredProducts = [...filteredProducts].sort(
-    (a, b) => b.price - a.price
-  );
-}
+
+  let filteredProducts = products.filter((product) => {
+    const searchMatch = product.title
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+    const categoryMatch = category === "all" || product.category === category;
+    const ratingMatch = product.rating >= rating;
+    const brandMatch = Brand === "" || product.brand === Brand;
+    return searchMatch && categoryMatch && ratingMatch && brandMatch;
+  });
+  if (priceSort === "low-high") {
+    filteredProducts = [...filteredProducts].sort((a, b) => a.price - b.price);
+  }
+  if (priceSort === "high-low") {
+    filteredProducts = [...filteredProducts].sort((a, b) => b.price - a.price);
+  }
   // useEffect(() => {
   //   console.log(cart);
   // }, [cart]);
@@ -117,43 +120,55 @@ if (priceSort === "high-low") {
         searchTerm={searchTerm}
       />
       {isLoading ? (
-        <div style={{ textAlign: "center", padding: "50px", fontSize: "20px" }}>Loading products...</div>
+        <div style={{ textAlign: "center", padding: "50px", fontSize: "20px" }}>
+          Loading products...
+        </div>
       ) : (
         <Routes>
-          <Route path="/" element={
-            <div className="mainContainer">
-              <aside>
-                <Category
-                  products={products}
-                  setCategory={setCategory}
-                  setRating={setRating}
-                  setPriceSort={setPriceSort}
-                  setBrand={setBrand}
+          <Route
+            path="/"
+            element={
+              <div className="mainContainer">
+                <aside>
+                  <Category
+                    products={products}
+                    setCategory={setCategory}
+                    setRating={setRating}
+                    setPriceSort={setPriceSort}
+                    setBrand={setBrand}
+                  />
+                </aside>
+                <Productlist
+                  products={filteredProducts}
+                  viewProductData={handleViewProduct}
+                  addToCart={addToCart}
                 />
-              </aside>
-              <Productlist
-                products={filteredProducts}
-                viewProductData={handleViewProduct}
-                addToCart={addToCart}
+              </div>
+            }
+          />
+          <Route
+            path="/cart"
+            element={
+              <Cart
+                cart={cart}
+                setCart={setCart}
+                increaseQuantity={increaseQuantity}
+                decreaseQuantity={decreaseQuantity}
+                removeItem={removeItem}
+                totalPrice={totalPrice}
+                viewProduct={handleViewProduct}
               />
-            </div>
-          } />
-          <Route path="/cart" element={
-            <Cart
-              cart={cart}
-              increaseQuantity={increaseQuantity}
-              decreaseQuantity={decreaseQuantity}
-              removeItem={removeItem}
-              totalPrice={totalPrice}
-              viewProduct={handleViewProduct}
-            />
-          } />
-          <Route path="/product/:id" element={
-            <ProductDetailRoute products={products} addToCart={addToCart} />
-          } />
+            }
+          />
+          <Route
+            path="/product/:id"
+            element={
+              <ProductDetailRoute products={products} addToCart={addToCart} />
+            }
+          />
         </Routes>
       )}
-      <Footer/>
+      <Footer />
     </>
   );
 };
